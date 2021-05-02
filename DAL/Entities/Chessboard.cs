@@ -6,5 +6,6 @@ namespace DAL.Entities
 {
     public class Chessboard
     {
+        public int Id { get; set; }
     }
 }
