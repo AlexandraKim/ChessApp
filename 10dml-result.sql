@@ -1,0 +1,1 @@
+﻿insert into Result(game_id, type) values (1, 1);
