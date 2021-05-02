@@ -6,3 +6,6 @@ values ('United States Chess Federation', 'USCF', 'Crossville, Tennessee', 'Mike
 
 Insert Into Federation (name, abbreviation, headquarters, president_name, Foundation_date, website)  
 values ('The French Chess Federation', 'FFE', ' Saint-Quentin-en-Yvelines, France', 'Diego Salazar', '1933-04-23', 'http://www.echecs.asso.fr/');
+
+Insert Into Federation (name, abbreviation, headquarters, president_name, Foundation_date, website)  
+values ('Chess Federation of Russia', 'FFE', 'Moscow, Russia', 'Filatov, Andrey', '1992-04-23', 'http://www.ruchess.ru/');
