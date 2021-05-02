@@ -15,7 +15,7 @@ namespace DAL
 
         public DbSet<Player> Players { get; set; }
 
-        public DbSet<Match> Mathches { get; set; }
+        public DbSet<Match> Matches { get; set; }
 
         public DbSet<Result> Results { get; set; }
 
