@@ -10,8 +10,8 @@ INSERT INTO Tournament (country_id, name, start_date, end_date) values(174, 'Zon
 INSERT INTO Tournament (country_id, name, start_date, end_date) values(174, '11th Central Chess Club Sunday Open', '2021-05-02', '2021-05-03');
 INSERT INTO Tournament (country_id, name, start_date, end_date) values(174, 'Uzbekistan Men Championship Final 2021', '2021-04-17', '2021-04-30');
 
-INSERT INTO Orginizer (name, website) values('Gazprom', 'https://www.gazprom.com/');
-INSERT INTO Orginizer (name, website) values('SWIPS', 'https://chess.swips.eu/');
+INSERT INTO Organizer (name, website) values('Gazprom', 'https://www.gazprom.com/');
+INSERT INTO Organizer (name, website) values('SWIPS', 'https://chess.swips.eu/');
 
 INSERT INTO Conducts (tournament_id, organizer_id) values(1, 1);
 INSERT INTO Conducts (tournament_id, organizer_id) values(2, 1);
@@ -24,3 +24,5 @@ INSERT INTO Conducts (tournament_id, organizer_id) values(8, 1);
 INSERT INTO Conducts (tournament_id, organizer_id) values(9, 2);
 INSERT INTO Conducts (tournament_id, organizer_id) values(10, 2);
 INSERT INTO Conducts (tournament_id, organizer_id) values(11, 2);
+INSERT INTO Conducts (tournament_id, organizer_id) values(1, 2);
+INSERT INTO Conducts (tournament_id, organizer_id) values(2, 2);
