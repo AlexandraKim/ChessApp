@@ -15,7 +15,7 @@ namespace Domain
 
         public DbSet<Player> Players { get; set; }
 
-        public DbSet<Match> Matches { get; set; }
+        public DbSet<Game> Matches { get; set; }
 
         public DbSet<Result> Results { get; set; }
 
@@ -34,8 +34,6 @@ namespace Domain
         public DbSet<Organizer> Organizers { get; set; }
 
         public DbSet<Move> Moves { get; set; }
-
-        public DbSet<Chessboard> Chessboards { get; set; }
 
         public DbSet<Country> Countries { get; set; }
     }

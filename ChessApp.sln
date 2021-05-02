@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{1BD049F5-5B79-4739-8611-3C5E7A695DCB}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\dml - country.sql = Scripts\dml - country.sql
+		dml-federation.sql = dml-federation.sql
+		dml-piece.sql = dml-piece.sql
 		Scripts\dml-player.sql = Scripts\dml-player.sql
 		Scripts\schema.sql = Scripts\schema.sql
 	EndProjectSection
