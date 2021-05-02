@@ -1,0 +1,13 @@
+INSERT INTO Title (name, date, player_id) values('Grandmaster (GM)', '2010-01-01', '1');
+INSERT INTO Title (name, date, player_id) values('Grandmaster (GM)', '2007-01-02', '2');
+INSERT INTO Title (name, date, player_id) values('International Master (IM)', '2006-01-03', '2');
+INSERT INTO Title (name, date, player_id) values('FIDE Master (FM)', '2002-01-03', '2');
+INSERT INTO Title (name, date, player_id) values('Grandmaster (GM)', '2009-01-03', '3');
+INSERT INTO Title (name, date, player_id) values('Grandmaster (GM)', '2007-05-02', '4');
+INSERT INTO Title (name, date, player_id) values('International Master (IM)', '2004-05-02', '4');
+INSERT INTO Title (name, date, player_id) values('Grandmaster (GM)', '2000-05-02', '5');
+INSERT INTO Title (name, date, player_id) values('International Master (IM)', '1997-06-19', '5');
+INSERT INTO Title (name, date, player_id) values('Grandmaster (GM)', '2009-01-03', '6');
+INSERT INTO Title (name, date, player_id) values('FIDE Master (FM)', '2008-01-03', '6');
+INSERT INTO Title (name, date, player_id) values('Grandmaster (GM)', '2000-01-03', '7');
+INSERT INTO Title (name, date, player_id) values('International Master (IM)', '1998-06-19', '7');
