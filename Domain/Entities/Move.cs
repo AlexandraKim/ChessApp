@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DAL.Entities
+namespace Domain.Entities
 {
     public class Move
     {
@@ -20,6 +18,6 @@ namespace DAL.Entities
 
         public bool IsCapturing { get; set; }
 
-        public bool IsCheck { get; set; 
+        public bool IsCheck { get; set; }
     }
 }

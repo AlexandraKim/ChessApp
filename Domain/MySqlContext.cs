@@ -1,7 +1,7 @@
-﻿using DAL.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DAL
+namespace Domain
 {
     public class MySqlContext : DbContext
     {
