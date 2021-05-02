@@ -12,6 +12,6 @@ namespace Domain.Entities
 
         public string Name { get; set; }
 
-        public DateTime AwardDate { get; set; }
+        public DateTime Date { get; set; }
     }
 }

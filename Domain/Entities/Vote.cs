@@ -8,9 +8,9 @@ namespace Domain.Entities
     {
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        public int VisitorId { get; set; }
 
-        public int MatchId { get; set; }
+        public int GameId { get; set; }
         
         public int PlayerId { get; set; }
     }

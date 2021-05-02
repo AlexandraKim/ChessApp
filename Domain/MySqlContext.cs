@@ -11,7 +11,7 @@ namespace Domain
 
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<Visitor> Users { get; set; }
 
         public DbSet<Player> Players { get; set; }
 
