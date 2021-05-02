@@ -10,10 +10,16 @@ namespace DAL.Entities
 
         public int PlayerId { get; set; }
 
-        public Enum Type { get; set; }
+        public int PieceId { get; set; }
 
-        public string Color { get; set; }
+        public string FromSquare { get; set; }
 
-        public string Square { get; set; }
+        public string ToSquare { get; set; }
+
+        public DateTime Time { get; set; }
+
+        public bool IsCapturing { get; set; }
+
+        public bool IsCheck { get; set; 
     }
 }
