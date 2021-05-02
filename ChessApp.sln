@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{1BD0
 	ProjectSection(SolutionItems) = preProject
 		Scripts\1dml - country.sql = Scripts\1dml - country.sql
 		Scripts\2dml-player.sql = Scripts\2dml-player.sql
+		7dml-move.sql = 7dml-move.sql
 		dml-federation.sql = dml-federation.sql
 		dml-piece.sql = dml-piece.sql
 		Scripts\schema.sql = Scripts\schema.sql
