@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DAL.Entities
 {
-    class Player
+    public class Player
     {
     }
 }
