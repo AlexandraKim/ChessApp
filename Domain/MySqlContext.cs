@@ -11,30 +11,30 @@ namespace Domain
 
         }
 
-        public DbSet<Visitor> Users { get; set; }
+        public DbSet<Visitor> User { get; set; }
 
-        public DbSet<Player> Players { get; set; }
+        public DbSet<Player> Player { get; set; }
 
-        public DbSet<Game> Matches { get; set; }
+        public DbSet<Game> Game { get; set; }
 
-        public DbSet<Result> Results { get; set; }
+        public DbSet<Result> Result { get; set; }
 
-        public DbSet<Tournament> Tournaments { get; set; }
+        public DbSet<Tournament> Tournament { get; set; }
 
-        public DbSet<Vote> Votes { get; set; }
+        public DbSet<Vote> Vote { get; set; }
 
-        public DbSet<Transfer> Transfers { get; set; }
+        public DbSet<Transfer> Transfer { get; set; }
 
-        public DbSet<Title> Titles { get; set; }
+        public DbSet<Title> Title { get; set; }
 
-        public DbSet<Federation> Federations { get; set; }
+        public DbSet<Federation> Federation { get; set; }
 
-        public DbSet<Piece> Pieces { get; set; }
+        public DbSet<Piece> Piece { get; set; }
 
-        public DbSet<Organizer> Organizers { get; set; }
+        public DbSet<Organizer> Organizer { get; set; }
 
-        public DbSet<Move> Moves { get; set; }
+        public DbSet<Move> Move { get; set; }
 
-        public DbSet<Country> Countries { get; set; }
+        public DbSet<Country> Country { get; set; }
     }
 }
