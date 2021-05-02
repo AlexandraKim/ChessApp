@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Domain.Entities.Supplementary;
 
 namespace Domain.Entities
 {
@@ -16,6 +17,6 @@ namespace Domain.Entities
 
         public int Rank { get; set; }
 
-        public int MyProperty { get; set; }
+        public GenderType Gender { get; set; }
     }
 }

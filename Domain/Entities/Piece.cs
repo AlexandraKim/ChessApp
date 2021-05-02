@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Domain.Entities.Supplementary;
 
 namespace Domain.Entities
 {
@@ -10,7 +11,7 @@ namespace Domain.Entities
 
         public int PlayerId { get; set; }
 
-        public Enum Type { get; set; }
+        public PieceType Type { get; set; }
 
         public string Color { get; set; }
 
