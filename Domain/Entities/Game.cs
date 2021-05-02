@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Domain.Entities
 {
-    public class Match
+    public class Game
     {
-        public Match()
+        public Game()
         {
             Players = new List<Player>();
         }
