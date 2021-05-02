@@ -13,7 +13,7 @@ namespace Domain.Entities
 
         public PieceType Type { get; set; }
 
-        public string Color { get; set; }
+        public bool Color { get; set; }
 
         public string Square { get; set; }
     }

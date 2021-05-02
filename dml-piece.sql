@@ -1,1 +1,1 @@
-﻿insert into Piece
+﻿insert into Piece (player_id, type, color, square) values (1, 0, 0, '')
