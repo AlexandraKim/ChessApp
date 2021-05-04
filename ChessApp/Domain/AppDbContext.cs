@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 #nullable disable
 
 namespace ChessApp.Domain {
-	public class ChessAppContext : DbContext {
-		public ChessAppContext() { }
+	public class AppDbContext : DbContext {
+		public AppDbContext() { }
 
-		public ChessAppContext(DbContextOptions<ChessAppContext> options)
+		public AppDbContext(DbContextOptions<AppDbContext> options)
 			: base(options) { }
 
 		public virtual DbSet<Conduct> Conducts { get; set; }
@@ -65,6 +65,7 @@ namespace ChessApp.Domain {
 
 			modelBuilder.Entity<Country>(entity => {
 				entity.ToTable(name: "country");
+				entity.HasKey(e => e.Id);
 
 				entity.Property(e => e.Id)
 				      .HasColumnType(typeName: "int(11)")
@@ -265,6 +266,7 @@ namespace ChessApp.Domain {
 
 			modelBuilder.Entity<Piece>(entity => {
 				entity.ToTable(name: "piece");
+				entity.HasKey(e => e.Id);
 
 				entity.HasIndex(e => e.PlayerId, name: "controlls");
 
@@ -300,7 +302,7 @@ namespace ChessApp.Domain {
 				entity.ToTable(name: "player");
 
 				entity.HasIndex(e => e.CountryId, name: "produces");
-				entity.HasKey(e => e.CountryId);
+				entity.HasKey(e => e.Id);
 
 				entity.Property(e => e.Id)
 				      .HasColumnType(typeName: "int(11)")
