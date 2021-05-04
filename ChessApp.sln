@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessApp", "ChessApp\ChessApp.csproj", "{98F8FEBA-FAB1-4C05-BD8D-913FAFF15EA3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{58A3B757-BB7F-4EB4-AEFC-058A563A6797}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{1BD049F5-5B79-4739-8611-3C5E7A695DCB}"
 	ProjectSection(SolutionItems) = preProject
 		10dml-result.sql = 10dml-result.sql
@@ -31,10 +29,6 @@ Global
 		{98F8FEBA-FAB1-4C05-BD8D-913FAFF15EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98F8FEBA-FAB1-4C05-BD8D-913FAFF15EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98F8FEBA-FAB1-4C05-BD8D-913FAFF15EA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58A3B757-BB7F-4EB4-AEFC-058A563A6797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58A3B757-BB7F-4EB4-AEFC-058A563A6797}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58A3B757-BB7F-4EB4-AEFC-058A563A6797}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58A3B757-BB7F-4EB4-AEFC-058A563A6797}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
