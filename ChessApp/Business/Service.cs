@@ -64,7 +64,7 @@ namespace ChessApp.Business
 
             foreach (var game in games)
             {
-                var winnerName = _repository.GetGameWinner(game.Id);
+                var winnerName = _repository.GetGameWinner(game.Id).Name;
                 table.Rows.Add($"{winnerName} by {game.Result}",
                                game.ParticipatesIns.Select(p=>p.Player.Name).First(),
                                game.ParticipatesIns.Select(p=>p.Player.Name).Last(),
@@ -79,7 +79,12 @@ namespace ChessApp.Business
         public DataTable GetMoves()
         {
             var table = new DataTable();
-
+            table.Columns.Add(columnName: "Result", typeof(string));
+            table.Columns.Add(columnName: "Player 1", typeof(string));
+            table.Columns.Add(columnName: "Player 2", typeof(string));
+            table.Columns.Add(columnName: "Start Time", typeof(string));
+            table.Columns.Add(columnName: "End Time", typeof(string));
+            table.Columns.Add(columnName: "Tournament", typeof(string));
             return table;
         }
     }
