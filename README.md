@@ -12,7 +12,7 @@ git clone https://github.com/AlexandraKim/ChessApp.git
 ```
 ### Build database infrastructure
 * Create Database ```chessapp``` in phpMyAdmin 
-* Run scripts from **scripts folder** one by one starting with schema
+* Run scripts from **scripts folder** one by one starting with schema.sql
 
 ### Run project 
 * Press Run button in Visual studio
