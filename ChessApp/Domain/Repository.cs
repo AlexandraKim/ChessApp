@@ -76,5 +76,12 @@ namespace ChessApp.Domain
             
             return moves.ToList();
         }
+
+        public IEnumerable<Transfer> GetTransfers() {
+            return _context.Transfers.Include(t => t.FormerFederation)
+                           .Include(t => t.NewFederation)
+                           .Include(t => t.Player)
+                           .ToList();
+        }
     }
 }

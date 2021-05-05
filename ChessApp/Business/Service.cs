@@ -103,5 +103,25 @@ namespace ChessApp.Business
 
             return table;
         }
+
+        public DataTable GetTransfersTable() {
+            var table = new DataTable();
+            IEnumerable<Transfer> transfers = _repository.GetTransfers();
+            table.Columns.Add(columnName: "Name", typeof(string));
+            table.Columns.Add(columnName: "Federation", typeof(string));
+            table.Columns.Add(columnName: "Former Federation", typeof(string));
+            table.Columns.Add(columnName: "Date", typeof(string));
+            table.Columns.Add(columnName: "Fee", typeof(string));
+
+            foreach (Transfer transfer in transfers) {
+                table.Rows.Add(transfer.Player.Name,
+                               transfer.NewFederation.Abbreviation,
+                               transfer.FormerFederation.Abbreviation,
+                               transfer.Date.ToString("MM/dd/yyyy"),
+                               transfer.Fee);
+            }
+
+            return table;
+        }
     }
 }
