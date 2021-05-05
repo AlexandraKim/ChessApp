@@ -34,16 +34,16 @@ namespace ChessApp.Business
                         table.Rows.Add(player.Name,
                                        player.Gender,
                                        player.Rank.ToString(),
-                                       player.BirthDate,
+                                       player.BirthDate.Value.ToString("yyyy MMMM"),
                                        player.Country.Name,
-                                       player.Titles.First().Name);
+                                       $"{player.Titles.First().Name} ({player.Titles.First().Date.Year})");
                     } else {
                         table.Rows.Add(string.Empty,
                                        string.Empty,
                                        string.Empty,
                                        string.Empty,
                                        string.Empty,
-                                       player.Titles.ElementAt(i).Name);
+                                       $"{player.Titles.ElementAt(i).Name} ({player.Titles.ElementAt(i).Date.Year})");
                     }
                 }
             }
