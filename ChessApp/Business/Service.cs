@@ -130,6 +130,28 @@ namespace ChessApp.Business
             return table;
         }
 
+        public DataTable GetTournamentsTable() {
+            var table = new DataTable();
+            IEnumerable<Tournament> tournaments = _repository.GetTournaments();
+            table.Columns.Add(columnName: "Name", typeof(string));
+            table.Columns.Add(columnName: "Country", typeof(string));
+            table.Columns.Add(columnName: "Start Date", typeof(string));
+            table.Columns.Add(columnName: "End Date", typeof(string));
+            table.Columns.Add(columnName: "Orginizer", typeof(string));
+
+            foreach (Tournament tournament in tournaments) {
+                for (int i = 0; i < tournament.Conducts.Count; i++) {
+                    table.Rows.Add(tournament.Name,
+                                   tournament.Country.Name,
+                                   tournament.StartDate.Date.ToString("MM/dd/yyyy"),
+                                   tournament.EndDate,
+                                   tournament.Conducts.ElementAt(i).Organizer.Name);
+                }
+            }
+
+            return table;
+        }
+
         public DataTable GetVotes()
         {
 

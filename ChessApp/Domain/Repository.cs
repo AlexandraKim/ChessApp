@@ -46,8 +46,8 @@ namespace ChessApp.Domain
 
         public Player GetGameWinner(int id)
         {
-            var game = _context.Games.Where(g => g.Id == id).Include(g => g.Moves).ThenInclude(m => m.Player).FirstOrDefault();
-            var lastMove = game.Moves.Where(m => m.IsCheck == true).OrderByDescending(m => m.Time).FirstOrDefault();
+            var game = _context.Games.Where(g=>g.Id==id).Include(g => g.Moves).ThenInclude(m => m.Player).FirstOrDefault();
+            var lastMove = game.Moves.Where(m=>m.IsCheck.Value).OrderByDescending(m=>m.Time).FirstOrDefault();
             return lastMove.Player;
         }
 
@@ -84,6 +84,13 @@ namespace ChessApp.Domain
                            .ToList();
         }
 
+        public IEnumerable<Tournament> GetTournaments() {
+            return _context.Tournaments.Include(t => t.Conducts)
+                           .ThenInclude(t => t.Organizer)
+                           .Include(t => t.Country)
+                           .ToList();
+        }
+
         public IEnumerable<Vote> GetVotes()
         {
             var votes = from v in _context.Votes
@@ -105,3 +112,4 @@ namespace ChessApp.Domain
         }
     }
 }
+
