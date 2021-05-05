@@ -12,8 +12,10 @@ namespace ChessApp.Domain.Entities {
 		public bool? IsCapturing { get; set; }
 		public bool? IsCheck { get; set; }
 		public int PieceId { get; set; }
+		public int GameId { get; set; }
 
 		public virtual Piece Piece { get; set; }
 		public virtual Player Player { get; set; }
+		public virtual Game Game { get; set; }
 	}
 }

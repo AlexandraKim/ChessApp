@@ -9,7 +9,7 @@ namespace ChessApp {
 	internal class Program {
 
 		private static void Main(string[] args) {
-			var _service = new Service(new Repository(new AppDbContext()));		
+			var _service = new Service(new Repository(new AppDbContext()));
 
 			Application.Init();
 			Toplevel top = Application.Top;

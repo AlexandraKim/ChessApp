@@ -21,5 +21,6 @@ namespace ChessApp.Domain.Entities {
 		public virtual ICollection<ParticipatesIn> ParticipatesIns { get; set; }
 		public virtual ICollection<Result> Results { get; set; }
 		public virtual ICollection<Vote> Votes { get; set; }
+		public virtual ICollection<Move> Moves { get; set; }
 	}
 }

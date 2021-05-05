@@ -195,6 +195,10 @@ namespace ChessApp.Domain {
 				      .HasColumnType(typeName: "int(11)")
 				      .HasColumnName(name: "player_id");
 
+				entity.Property(e => e.GameId)
+				      .HasColumnType(typeName: "int(11)")
+				      .HasColumnName(name: "game_id");
+
 				entity.Property(e => e.Time)
 				      .HasColumnName(name: "time")
 				      .HasDefaultValueSql(sql: "'NULL'");
@@ -203,6 +207,12 @@ namespace ChessApp.Domain {
 				      .IsRequired()
 				      .HasMaxLength(maxLength: 2)
 				      .HasColumnName(name: "to_square");
+
+				entity.HasOne(d => d.Game)
+				      .WithMany(p => p.Moves)
+				      .HasForeignKey(d => d.GameId)
+				      .OnDelete(DeleteBehavior.ClientSetNull)
+				      .HasConstraintName(name: "has");
 
 				entity.HasOne(d => d.Piece)
 				      .WithMany(p => p.Moves)

@@ -46,6 +46,7 @@ CREATE TABLE Move
 	is_capturing         BIT NULL,
 	is_check             BIT NULL,
 	piece_id             INTEGER NOT NULL,
+	game_id              INTEGER NOT NULL,
 	CONSTRAINT XPKMove PRIMARY KEY (id)
 );
 
@@ -157,6 +158,9 @@ ADD CONSTRAINT starts FOREIGN KEY (player_id) REFERENCES Player (id);
 
 ALTER TABLE Move
 ADD CONSTRAINT makes FOREIGN KEY (piece_id) REFERENCES Piece (id);
+
+ALTER TABLE Move
+ADD CONSTRAINT has FOREIGN KEY (game_id) REFERENCES Game (id);
 
 ALTER TABLE Participates_in
 ADD CONSTRAINT plays_in FOREIGN KEY (player_id) REFERENCES Player (id);
