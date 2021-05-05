@@ -146,6 +146,10 @@ namespace ChessApp.Domain {
 				      .HasColumnType(typeName: "date")
 				      .HasColumnName(name: "start_time");
 
+				entity.Property(e => e.Result)
+				      .HasColumnType(typeName: "int(11)")
+				      .HasColumnName(name: "result");
+
 				entity.Property(e => e.TournamentId)
 				      .HasColumnType(typeName: "int(11)")
 				      .HasColumnName(name: "tournament_id");
@@ -366,31 +370,6 @@ namespace ChessApp.Domain {
 				      .HasForeignKey(m => m.PlayerId);
 			});
 
-			modelBuilder.Entity<Result>(entity => {
-				entity.ToTable(name: "result");
-
-				entity.HasIndex(e => e.GameId, name: "results_in");
-
-				entity.Property(e => e.Id)
-				      .HasColumnType(typeName: "int(11)")
-				      .HasColumnName(name: "id");
-
-				entity.Property(e => e.GameId)
-				      .HasColumnType(typeName: "int(11)")
-				      .HasColumnName(name: "game_id");
-
-				entity.Property(e => e.Type)
-				      .HasColumnType(typeName: "int(11)")
-				      .HasColumnName(name: "type")
-				      .HasDefaultValueSql(sql: "'NULL'");
-
-				entity.HasOne(d => d.Game)
-				      .WithMany(p => p.Results)
-				      .HasForeignKey(d => d.GameId)
-				      .OnDelete(DeleteBehavior.ClientSetNull)
-				      .HasConstraintName(name: "results_in");
-			});
-
 			modelBuilder.Entity<Title>(entity => {
 				entity.ToTable(name: "title");
 
@@ -572,13 +551,6 @@ namespace ChessApp.Domain {
 				      .OnDelete(DeleteBehavior.ClientSetNull)
 				      .HasConstraintName(name: "leaves");
 			});
-
-			// base.OnModelCreatingPartial(modelBuilder);
 		}
-
-		// private void OnModelCreatingPartial(ModelBuilder modelBuilder)
-		// {
-		//     throw new NotImplementedException();
-		// }
 	}
 }

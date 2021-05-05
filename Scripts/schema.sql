@@ -33,6 +33,7 @@ CREATE TABLE Game
 	start_time           DATE NOT NULL,
 	tournament_id        INTEGER NOT NULL,
 	end_time             DATE NOT NULL,
+	result               INTEGER NULL,
 	CONSTRAINT XPKMatch PRIMARY KEY (id)
 );
 
@@ -173,9 +174,6 @@ ADD CONSTRAINT controlls FOREIGN KEY (player_id) REFERENCES Player (id);
 
 ALTER TABLE Player
 ADD CONSTRAINT produces FOREIGN KEY (country_id) REFERENCES Country (id);
-
-ALTER TABLE Result
-ADD CONSTRAINT results_in FOREIGN KEY (game_id) REFERENCES Game (id);
 
 ALTER TABLE Title
 ADD CONSTRAINT holds FOREIGN KEY (player_id) REFERENCES Player (id);
