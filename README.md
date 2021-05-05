@@ -15,4 +15,5 @@ git clone https://github.com/AlexandraKim/ChessApp.git
 * Run scripts from **scripts folder** one by one starting with schema.sql
 
 ### Run project 
+* Open ChessApp.sln in Visual Studio
 * Press Run button in Visual studio
