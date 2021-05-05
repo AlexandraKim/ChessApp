@@ -26,7 +26,8 @@ namespace ChessApp.Domain
                            .ToList();
         }
 
-        public IEnumerable<ParticipatesIn> GetParticipatesIns() {
+        public IEnumerable<ParticipatesIn> GetParticipatesIns()
+        {
             return _context.ParticipatesIns
                            .Include(p => p.Player)
                            .ThenInclude(p => p.Moves)
@@ -38,16 +39,42 @@ namespace ChessApp.Domain
                            .ToList();
         }
 
-        public IEnumerable<Game> GetGamesWithParticipants() 
+        public IEnumerable<Game> GetGamesWithParticipants()
         {
             return _context.Games.Include(g => g.Moves).Include(g => g.Tournament).Include(g => g.ParticipatesIns).ThenInclude(p => p.Player).ToList();
         }
 
         public Player GetGameWinner(int id)
         {
-            var game = _context.Games.Where(g=>g.Id==id).Include(g => g.Moves).ThenInclude(m => m.Player).FirstOrDefault();
-            var lastMove = game.Moves.Where(m=>m.IsCheck==true).OrderByDescending(m=>m.Time).FirstOrDefault();
+            var game = _context.Games.Where(g => g.Id == id).Include(g => g.Moves).ThenInclude(m => m.Player).FirstOrDefault();
+            var lastMove = game.Moves.Where(m => m.IsCheck == true).OrderByDescending(m => m.Time).FirstOrDefault();
             return lastMove.Player;
+        }
+
+        public IEnumerable<Move> GetMovesOfGame(int id)
+        {
+            var moves = from m in _context.Moves
+                        join p in _context.Players
+                        on m.PlayerId equals p.Id
+                        join pi in _context.Pieces
+                        on m.PieceId equals pi.Id
+                        join g in _context.Games
+                        on m.GameId equals g.Id
+                        where m.GameId == id
+                        select new Move
+                        {
+                            Id = m.Id,
+                            Player = p,
+                            Piece = pi,
+                            FromSquare = m.FromSquare,
+                            ToSquare = m.ToSquare,
+                            IsCapturing = m.IsCapturing,
+                            IsCheck = m.IsCheck,
+
+                        };
+
+            
+            return moves.ToList();
         }
     }
 }

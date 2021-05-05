@@ -79,12 +79,28 @@ namespace ChessApp.Business
         public DataTable GetMoves()
         {
             var table = new DataTable();
-            table.Columns.Add(columnName: "Result", typeof(string));
-            table.Columns.Add(columnName: "Player 1", typeof(string));
-            table.Columns.Add(columnName: "Player 2", typeof(string));
-            table.Columns.Add(columnName: "Start Time", typeof(string));
-            table.Columns.Add(columnName: "End Time", typeof(string));
-            table.Columns.Add(columnName: "Tournament", typeof(string));
+            var game = _repository.GetGamesWithParticipants().First();
+            var moves = _repository.GetMovesOfGame(game.Id);
+
+            table.Columns.Add(columnName: "Game", typeof(string));
+            table.Columns.Add(columnName: "Player", typeof(string));
+            table.Columns.Add(columnName: "Piece", typeof(string));
+            table.Columns.Add(columnName: "From Square", typeof(string));
+            table.Columns.Add(columnName: "To Square", typeof(string));
+            table.Columns.Add(columnName: "Is Check", typeof(string));
+            table.Columns.Add(columnName: "Is Capturing", typeof(string));
+
+            foreach (var move in moves) 
+            {
+                table.Rows.Add(game.Name,
+                               move.Player.Name,
+                               move.Piece.Type,
+                               move.FromSquare,
+                               move.ToSquare,
+                               move.IsCheck,
+                               move.IsCapturing);
+            }
+
             return table;
         }
     }
