@@ -20,7 +20,10 @@ namespace ChessApp.Domain
 
         public IEnumerable<Player> GetPlayersAndTitles()
         {
-            return _context.Players.Include(p=>p.Country).Include(p => p.Titles).ToList();
+            return _context.Players
+                           .Include(p => p.Country)
+                           .Include(p => p.Titles)
+                           .ToList();
         }
     }
 }
