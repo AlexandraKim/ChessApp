@@ -51,43 +51,6 @@ namespace ChessApp.Business
             return table;
         }
 
-        //public DataTable GetGamesTable() {
-        //    var table = new DataTable();
-        //    IEnumerable<ParticipatesIn> participatesIns = _repository.GetParticipatesIns();
-        //    table.Columns.Add(columnName: "Result", typeof(string));
-        //    table.Columns.Add(columnName: "Player 1", typeof(string));
-        //    table.Columns.Add(columnName: "Player 2", typeof(string));
-        //    table.Columns.Add(columnName: "Start Time", typeof(string));
-        //    table.Columns.Add(columnName: "End Time", typeof(string));
-        //    table.Columns.Add(columnName: "Tournament", typeof(string));
-        //    table.Columns.Add(columnName: "Moves History", typeof(string));
-
-        //    foreach (IGrouping<Game, ParticipatesIn> gameGroup in participatesIns.GroupBy(x => x.Game)) {
-        //        // ParticipatesIn winner = gameGroup.First(g => g.Player.Moves.Any(m => m.IsCheck != null && m.IsCheck.Value));
-        //        ParticipatesIn game = gameGroup.First();
-        //        // table.Rows.Add($"{winner.Player.Name} - {game.Game.Result}",
-        //        table.Rows.Add($"Winner name - {game.Game.Result}",
-        //                       game.Player.Name,
-        //                       gameGroup.Last().Player.Name,
-        //                       game.Game.StartTime.ToString(format: "g"),
-        //                       game.Game.EndTime.ToString(format: "g"),
-        //                       game.Game.Tournament.Name,
-        //                       game.Player.Moves.First().Piece.Type);
-        //            // } else {
-        //            //     table.Rows.Add(string.Empty,
-        //            //                    string.Empty,
-        //            //                    string.Empty,
-        //            //                    string.Empty,
-        //            //                    string.Empty,
-        //            //                    string.Empty,
-        //            //                    game.Player.Moves.First().Piece.Type);
-        //        // }
-        //    }
-
-        //    return table;
-        //}
-
-
         public DataTable GetGamesTable()
         {
             var table = new DataTable();
