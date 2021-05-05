@@ -166,7 +166,7 @@ namespace ChessApp.Business
 
             foreach (var vote in votes)
             {
-                var isSuccessfulVote = _repository.GetGameWinner(vote.Game.Id).Id==vote.Id;
+                var isSuccessfulVote = _repository.GetGameWinner(vote.Game.Id).Id==vote.Player.Id;
                 table.Rows.Add(vote.Visitor.Name,
                                 vote.Game.Name,
                                 vote.Player.Name,
