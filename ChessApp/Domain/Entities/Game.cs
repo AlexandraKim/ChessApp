@@ -9,6 +9,7 @@ namespace ChessApp.Domain.Entities {
 		public Game() {
 			ParticipatesIns = new HashSet<ParticipatesIn>();
 			Votes = new HashSet<Vote>();
+			Moves = new HashSet<Move>();
 		}
 
 		public int Id { get; set; }

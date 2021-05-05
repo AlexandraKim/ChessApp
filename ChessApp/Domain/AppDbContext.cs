@@ -159,6 +159,10 @@ namespace ChessApp.Domain {
 				      .HasForeignKey(d => d.TournamentId)
 				      .OnDelete(DeleteBehavior.ClientSetNull)
 				      .HasConstraintName(name: "consists_of");
+
+				entity.HasMany(e => e.Moves)
+				      .WithOne(e => e.Game)
+				      .HasForeignKey(e => e.GameId);
 			});
 
 			modelBuilder.Entity<Move>(entity => {

@@ -28,13 +28,28 @@ namespace ChessApp {
 			win.Add(header);
 
 			DataTable table = _service.GetPlayersAndTitlesTable();
-			var tableView = new TableView(table) {
+			var playersTableView = new TableView(table) {
 				X = Pos.Left(header),
 				Y = Pos.Top(header) + 1,
 				Width = Dim.Fill(),
 				Height = Dim.Fill()
 			};
-			win.Add(tableView);
+			win.Add(playersTableView);
+
+			var gamesHeader = new Label(text: "GAMES:") {
+				X = Pos.Left(playersTableView),
+				Y = Pos.Top(playersTableView) + table.Rows.Count + 4
+			};
+			win.Add(gamesHeader);
+
+			DataTable gamesTable = _service.GetGamesTable();
+			var gamesTableView = new TableView(gamesTable) {
+				X = Pos.Left(gamesHeader),
+				Y = Pos.Top(gamesHeader) + 1,
+				Width = Dim.Fill(),
+				Height = Dim.Fill()
+			};
+			win.Add(gamesTableView);
 			Application.Run();
 		}
 	}

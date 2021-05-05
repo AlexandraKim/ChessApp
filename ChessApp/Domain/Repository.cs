@@ -25,5 +25,17 @@ namespace ChessApp.Domain
                            .Include(p => p.Titles)
                            .ToList();
         }
+
+        public IEnumerable<ParticipatesIn> GetParticipatesIns() {
+            return _context.ParticipatesIns
+                           .Include(p => p.Player)
+                           .ThenInclude(p => p.Moves)
+                           .ThenInclude(m => m.Piece)
+                           .Include(p => p.Game)
+                           .ThenInclude(g => g.Tournament)
+                           .Include(p => p.Game)
+                           .ThenInclude(g => g.Moves)
+                           .ToList();
+        }
     }
 }
