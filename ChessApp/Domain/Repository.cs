@@ -83,5 +83,25 @@ namespace ChessApp.Domain
                            .Include(t => t.Player)
                            .ToList();
         }
+
+        public IEnumerable<Vote> GetVotes()
+        {
+            var votes = from v in _context.Votes
+                           join vi in _context.Visitors
+                           on v.VisitorId equals vi.Id
+                           join g in _context.Games
+                           on v.GameId equals g.Id
+                           join p in _context.Players
+                           on v.PlayerId equals p.Id
+                           select new Vote
+                           {
+                               VisitorId = v.Id,
+                               Player = p,
+                               Game = g,
+                               Visitor = vi
+                           };
+
+            return votes.ToList();
+        }
     }
 }

@@ -29,15 +29,19 @@ namespace ChessApp.Business
 
             foreach (Player player in players)
             {
-                for (int i = 0; i < player.Titles.Count; i++) {
-                    if (i == 0) {
+                for (int i = 0; i < player.Titles.Count; i++)
+                {
+                    if (i == 0)
+                    {
                         table.Rows.Add(player.Name,
                                        player.Gender,
                                        player.Rank.ToString(),
                                        player.BirthDate.Value.ToString("yyyy MMMM"),
                                        player.Country.Name,
                                        $"{player.Titles.First().Name} ({player.Titles.First().Date.Year})");
-                    } else {
+                    }
+                    else
+                    {
                         table.Rows.Add(string.Empty,
                                        string.Empty,
                                        string.Empty,
@@ -66,8 +70,8 @@ namespace ChessApp.Business
             {
                 var winnerName = _repository.GetGameWinner(game.Id).Name;
                 table.Rows.Add($"{winnerName} by {game.Result}",
-                               game.ParticipatesIns.Select(p=>p.Player.Name).First(),
-                               game.ParticipatesIns.Select(p=>p.Player.Name).Last(),
+                               game.ParticipatesIns.Select(p => p.Player.Name).First(),
+                               game.ParticipatesIns.Select(p => p.Player.Name).Last(),
                                game.StartTime.ToString(format: "g"),
                                game.EndTime.ToString(format: "g"),
                                game.Tournament.Name);
@@ -90,7 +94,7 @@ namespace ChessApp.Business
             table.Columns.Add(columnName: "Is Check", typeof(string));
             table.Columns.Add(columnName: "Is Capturing", typeof(string));
 
-            foreach (var move in moves) 
+            foreach (var move in moves)
             {
                 table.Rows.Add(game.Name,
                                move.Player.Name,
@@ -104,7 +108,8 @@ namespace ChessApp.Business
             return table;
         }
 
-        public DataTable GetTransfersTable() {
+        public DataTable GetTransfersTable()
+        {
             var table = new DataTable();
             IEnumerable<Transfer> transfers = _repository.GetTransfers();
             table.Columns.Add(columnName: "Name", typeof(string));
@@ -113,12 +118,37 @@ namespace ChessApp.Business
             table.Columns.Add(columnName: "Date", typeof(string));
             table.Columns.Add(columnName: "Fee", typeof(string));
 
-            foreach (Transfer transfer in transfers) {
+            foreach (Transfer transfer in transfers)
+            {
                 table.Rows.Add(transfer.Player.Name,
                                transfer.NewFederation.Abbreviation,
                                transfer.FormerFederation.Abbreviation,
                                transfer.Date.ToString("MM/dd/yyyy"),
                                transfer.Fee);
+            }
+
+            return table;
+        }
+
+        public DataTable GetVotes()
+        {
+
+            var table = new DataTable();
+            var votes = _repository.GetVotes();
+
+            table.Columns.Add(columnName: "Visitor Name", typeof(string));
+            table.Columns.Add(columnName: "Game Name", typeof(string));
+            table.Columns.Add(columnName: "Player Name", typeof(string));
+            table.Columns.Add(columnName: "Is Vote successful", typeof(string));
+
+
+            foreach (var vote in votes)
+            {
+                var isSuccessfulVote = _repository.GetGameWinner(vote.Game.Id).Id==vote.Id;
+                table.Rows.Add(vote.Visitor.Name,
+                                vote.Game.Name,
+                                vote.Player.Name,
+                                isSuccessfulVote);
             }
 
             return table;
