@@ -49,5 +49,12 @@ namespace ChessApp.Domain
             var lastMove = game.Moves.Where(m=>m.IsCheck==true).OrderByDescending(m=>m.Time).FirstOrDefault();
             return lastMove.Player;
         }
+
+        public IEnumerable<Transfer> GetTransfers() {
+            return _context.Transfers.Include(t => t.FormerFederation)
+                           .Include(t => t.NewFederation)
+                           .Include(t => t.Player)
+                           .ToList();
+        }
     }
 }

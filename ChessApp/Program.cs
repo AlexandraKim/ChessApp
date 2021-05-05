@@ -50,6 +50,21 @@ namespace ChessApp {
 				Height = Dim.Fill()
 			};
 			win.Add(gamesTableView);
+
+			var transfersHeader = new Label(text: "TRANSFERS:") {
+				X = Pos.Left(gamesTableView),
+				Y = Pos.Top(gamesTableView) + gamesTable.Rows.Count + 4
+			};
+			win.Add(transfersHeader);
+
+			DataTable transfersTable = _service.GetTransfersTable();
+			var transfersTableView = new TableView(transfersTable) {
+				X = Pos.Left(transfersHeader),
+				Y = Pos.Top(transfersHeader) + 1,
+				Width = Dim.Fill(),
+				Height = Dim.Fill()
+			};
+			win.Add(transfersTableView);
 			Application.Run();
 		}
 	}
