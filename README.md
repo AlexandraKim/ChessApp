@@ -4,7 +4,7 @@
 
 ## Reqierments  
 * Visual Studio 2019 
-* XAMP and phpMyAdminConsole
+* XAMPP and phpMyAdminConsole
 
 ### Clone project
 ``` 
