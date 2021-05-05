@@ -102,7 +102,7 @@ namespace ChessApp.Business
             foreach (var game in games)
             {
                 var winnerName = _repository.GetGameWinnerName(game.Id);
-                table.Rows.Add($"Winner name - {winnerName}",
+                table.Rows.Add($"{winnerName} by {game.Result}",
                                game.ParticipatesIns.Select(p=>p.Player.Name).First(),
                                game.ParticipatesIns.Select(p=>p.Player.Name).Last(),
                                game.StartTime.ToString(format: "g"),
