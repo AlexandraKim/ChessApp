@@ -43,11 +43,11 @@ namespace ChessApp.Domain
             return _context.Games.Include(g => g.Moves).Include(g => g.Tournament).Include(g => g.ParticipatesIns).ThenInclude(p => p.Player).ToList();
         }
 
-        public string GetGameWinnerName(int id)
+        public Player GetGameWinner(int id)
         {
             var game = _context.Games.Where(g=>g.Id==id).Include(g => g.Moves).ThenInclude(m => m.Player).FirstOrDefault();
             var lastMove = game.Moves.Where(m=>m.IsCheck==true).OrderByDescending(m=>m.Time).FirstOrDefault();
-            return lastMove.Player.Name;
+            return lastMove.Player;
         }
     }
 }
